@@ -1,0 +1,17 @@
+# Conan
+*.pyc
+CMakeUserPresets.json
+conan.lock
+conanbuildinfo.txt
+conaninfo.txt
+graph_info.json
+build/
+test_package/conan.lock
+test_package/conanbuildinfo.txt
+test_package/conaninfo.txt
+test_package/graph_info.json
+test_package/build/
+
+# CLion
+.idea/
+cmake-build-*/
