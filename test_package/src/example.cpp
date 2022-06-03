@@ -1,6 +1,6 @@
-#include "load-gltf.h"
+#include <load-gltf/load-gltf.hpp>
 
 int main()
 {
-	load_gltf();
+	lg::Gltf gltf = {};
 }

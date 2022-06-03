@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 // Copyright © 2022 Sebastian Larsson
 
-#include "load-gltf.h"
+#include <load-gltf/load-gltf.hpp>
 
 #include <spdlog/spdlog.h>
 
