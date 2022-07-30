@@ -99,12 +99,18 @@ namespace lg {
 		std::optional<Extras> extras;
 	};
 
+	struct LG_EXPORT Version
+	{
+		std::uint32_t major = {};
+		std::uint32_t minor = {};
+	};
+
 	struct LG_EXPORT Asset
 	{
 		std::optional<std::string> copyright;
 		std::optional<std::string> generator;
-		std::string version;
-		std::optional<std::string> minVersion;
+		Version version;
+		std::optional<Version> minVersion;
 		std::unordered_map<std::string, Extension> extensions;
 		std::optional<Extras> extras;
 	};
