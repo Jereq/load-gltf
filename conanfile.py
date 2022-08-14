@@ -16,7 +16,7 @@ class LoadGltfConan(ConanFile):
 
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
 
-    requires = "spdlog/1.10.0"
+    requires = "spdlog/1.10.0", "simdjson/2.2.2"
 
     def config_options(self):
         if self.settings.os == "Windows":
