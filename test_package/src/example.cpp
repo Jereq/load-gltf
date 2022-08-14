@@ -2,5 +2,5 @@
 
 int main()
 {
-	lg::Gltf gltf = {};
+	lg::Gltf gltf = lg::loadGltf("{}");
 }
