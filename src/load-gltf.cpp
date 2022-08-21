@@ -655,10 +655,15 @@ namespace {
 
 lg::Gltf lg::loadGltf(std::string_view inputJson)
 {
-	simdjson::padded_string paddedString(inputJson);
+	return lg::loadGltfPrePadded(simdjson::padded_string(inputJson));
+}
+
+static_assert(lg::paddingSize == simdjson::SIMDJSON_PADDING, "Padding must be the same");
+
+lg::Gltf lg::loadGltfPrePadded(std::string_view paddedInputJson)
+{
 	simdjson::ondemand::parser parser;
-	simdjson::ondemand::document doc = parser.iterate(paddedString);
-	simdjson::ondemand::object const& top = doc.get_object();
+	simdjson::ondemand::document doc = parser.iterate(paddedInputJson, paddedInputJson.size() + lg::paddingSize);
 	SPDLOG_INFO("Loading Gltf...");
 	lg::Gltf result = gltfParser.parse(doc);
 	// TODO: Implement validation
