@@ -23,7 +23,9 @@ class LoadGltfConan(ConanFile):
 
     exports_sources = "CMakeLists.txt", "src/*", "include/*"
 
-    requires = "spdlog/1.10.0", "simdjson/2.2.3"
+    requires = (
+        "spdlog/1.14.1",
+        "simdjson/3.10.0")
 
     def validate(self):
         check_min_cppstd(self, 20)
